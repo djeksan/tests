@@ -1,5 +1,23 @@
 <?php
 
+$angle=$_POST['angle'];
+
+$days=0;
+$hour=0;
+$minutes=0;
+
+if ($angle>360)
+{
+    $days=floor($angle/360);
+
+  $hour=floor((fmod($angle,360))/15);
+$minutes=($angle-($days*360+$hour*15))/0.25;
+    echo "Day-",$days,"Hou=",$hour,"Min-",$minutes;
+
+}
+
+/*
+ *
 var_dump($_POST['Line']);
 $Line=$_POST['Line'];
 $Number=$_POST['Number'];
@@ -15,3 +33,4 @@ foreach ($Line as $value)
     }
 }
 echo "a=",$a;
+*/
